@@ -1,0 +1,22 @@
+hai vasu anna 
+how are you 
+good to see you 
+just for the practice 
+dont mind 
+ 
+ 
+ changing the eno16777736 to eth0 in rhel07
+ 
+ 
+ 1     ifconfig eno16777736 down
+ 2	   ip link set eno16777736 name eth0
+ 3	   mv /etc/sysconfig/network-scripts/ifcfg-eno16777736   /etc/sysconfig/network-scripts/ifcfg-eth0
+ 4		vi /etc/sysconfig/network-scripts/ifcfg-eth0
+				IPADDR=10.10.28.00
+				ONBOOT=yes
+				BOOTPROTO=none
+				DEVICE=eth0
+				NAME=eth0
+5	ifconfig eth0 up					
+6	ip a
+7	reboot    (persistance across the reboot)
